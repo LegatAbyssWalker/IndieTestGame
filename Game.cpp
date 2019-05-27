@@ -1,8 +1,8 @@
 #include "Game.h"
-
+#include "MoreInfo.h"
 
 void Game::run() {
-	window.create(sf::VideoMode(1000, 900), "Indie Game Development");
+	window.create(sf::VideoMode(screenWidth, screenHeight), "Indie Game Development");
 	window.setPosition({ window.getPosition().x, window.getPosition().y - 50 });
 	window.setFramerateLimit(120);
 

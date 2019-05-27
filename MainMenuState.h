@@ -10,6 +10,7 @@
 
 #include "State.h"
 #include "FPSCounter.h"
+#include "Button.h"
 
 class StateMachine;
 
@@ -17,7 +18,8 @@ class StateMachine;
 class MainMenuState : public State {
 	public:
 		MainMenuState(StateMachine& machine, sf::RenderWindow& window, bool replace = true);
-		
+		~MainMenuState();
+
 		void pause();
 		void resume();
 
@@ -30,6 +32,7 @@ class MainMenuState : public State {
 	private:
 		//Class objects
 		FPSCounter fpsCounter;
+		Button* quitGameButton;
 
 
 		//Booleans and Variables

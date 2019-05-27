@@ -15,7 +15,7 @@ class FPSCounter {
 		~FPSCounter();
 
 
-		void drawTo(sf::RenderWindow& window);
+		void renderTo(sf::RenderWindow& window);
 		void update();
 
 

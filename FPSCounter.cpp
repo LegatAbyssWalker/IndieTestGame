@@ -18,7 +18,7 @@ FPSCounter::~FPSCounter() {
 
 
 //Functions
-void FPSCounter::drawTo(sf::RenderWindow& window) {
+void FPSCounter::renderTo(sf::RenderWindow& window) {
 	window.draw(framerateCounter);
 }
 
