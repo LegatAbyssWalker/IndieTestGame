@@ -26,22 +26,25 @@ MainMenuState::~MainMenuState() {
 }
 
 void MainMenuState::pause() {
+	//
 
 }
 
 void MainMenuState::resume() {
+	//
 	
 }
 
 
 void MainMenuState::update() {
+	sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
+
 	//Updating mouse position for button functionality
 	this->quitGameButton->update(sf::Vector2<float>(mousePos));
 	this->tutorialLevelButton->update(sf::Vector2<float>(mousePos));
 
 	//Event loop
 	while (window.pollEvent(sfEvent)) {
-		fpsCounter.update();
 
 		switch (sfEvent.type) {
 		case sf::Event::Closed:
@@ -49,22 +52,17 @@ void MainMenuState::update() {
 			break;
 
 		case sf::Event::MouseButtonPressed:
-			handleMouseInputs(sfEvent.mouseButton.button, true);
-			
-			if (quitGameButton->isPressed() == true) { machine.quit(); }
+			if (this->quitGameButton->isPressed() == true)		{ machine.quit(); }
+			if (this->tutorialLevelButton->isPressed() == true) {  }
+			 
 
-
-			break;
-
-		case sf::Event::MouseButtonReleased:
-			handleMouseInputs(sfEvent.mouseButton.button, false);
 			break;
 
 		case sf::Event::MouseMoved:
 			//
 
-			/*sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
-			std::cout << "X: " << mousePos.x << ", " << "Y: " << mousePos.y << '\n';*/
+			//sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
+			//std::cout << "X: " << mousePos.x << ", " << "Y: " << mousePos.y << '\n';
 			break;
 		}
 	}
@@ -72,11 +70,8 @@ void MainMenuState::update() {
 
 
 
+	fpsCounter.update();
 	/*-----------------------------------------------------------------------------------------*/
-}
-
-void MainMenuState::handleMouseInputs(sf::Mouse::Button mouseButton, bool isMousePressed) {
-	if (sf::Mouse::Left) { std::cout << "Left Click\n"; }
 }
 
 

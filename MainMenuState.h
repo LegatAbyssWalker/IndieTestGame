@@ -27,9 +27,6 @@ class MainMenuState : public State {
 		void update();
 		void render();
 	
-		void handleMouseInputs(sf::Mouse::Button mouseButton, bool isMousePressed);
-
-
 	private:
 		//Class objects
 		FPSCounter fpsCounter;
@@ -38,7 +35,6 @@ class MainMenuState : public State {
 		Text* titleText;
 
 		//Booleans and Variables
-		sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
 
 		sf::Event sfEvent;
 
