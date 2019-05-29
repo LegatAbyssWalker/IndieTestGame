@@ -15,10 +15,11 @@ enum ButtonStates { BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE };
 
 class Button {
 	public:
-		Button(float x, float y, float width, float height, unsigned int characterSize, std::string fontLocation, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color textColor);
+		//Necessary information for button creation
+		Button(float x, float y, float width, float height, unsigned int characterSize, std::string fontFile, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color textColor);
 		~Button();
 
-		
+		//Button functionalities
 		const bool isPressed() const;
 
 		void update(const sf::Vector2<float> mousePos);

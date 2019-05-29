@@ -11,6 +11,7 @@
 #include "State.h"
 #include "FPSCounter.h"
 #include "Button.h"
+#include "Text.h"
 
 class StateMachine;
 
@@ -33,16 +34,18 @@ class MainMenuState : public State {
 		//Class objects
 		FPSCounter fpsCounter;
 		Button* quitGameButton;
-
+		Button* tutorialLevelButton;
+		Text* titleText;
 
 		//Booleans and Variables
-		bool isFRPressed;
-
+		sf::Vector2<int> mousePos = sf::Mouse::getPosition(window);
 
 		sf::Event sfEvent;
 
 		sf::Texture backgroundTexture;
 		sf::Sprite backgroundImage;
+
+		sf::RectangleShape pauseBackground;
 };
 
 #endif
