@@ -3,18 +3,18 @@
 
 
 Player::Player() {
-	mTexture.loadFromFile("res/images/skeletonSpriteSheet.png");
+	mTexture.loadFromFile("res/images/playerTank.png");
 	mPlayer.setTexture(mTexture);
 
 	sf::Vector2<unsigned> individualCharacter = mTexture.getSize();
-	individualCharacter.x /= 9;
-	individualCharacter.y /= 4;
+	individualCharacter.x /= 1;
+	individualCharacter.y /= 1;
 
-	mPlayer.setTextureRect(sf::IntRect(individualCharacter.x * 0, individualCharacter.y * 2, individualCharacter.x, individualCharacter.y));
+	mPlayer.setTextureRect(sf::IntRect(individualCharacter.x * 0, individualCharacter.y * 0, individualCharacter.x, individualCharacter.y));
 	mPlayer.setOrigin(individualCharacter.x / 2, individualCharacter.y / 2);
 }
 
-void Player::drawTo(sf::RenderWindow& window) {
+void Player::renderTo(sf::RenderWindow& window) {
 	window.draw(mPlayer);
 }
 
@@ -36,11 +36,16 @@ int Player::getY() {
 
 void Player::updateBorderBounds() {
 	if (getX() <= screenWidth * 0)  { setPlayerPos(sf::Vector2<float>(getX() + playerBorderSpeed, getY())); } //Left
-	if (getX() <= screenWidth)      { setPlayerPos(sf::Vector2<float>(getX() - playerBorderSpeed, getY())); } //Right
-	if (getY() <= screenHeight * 0) { setPlayerPos(sf::Vector2<float>(getX(), getY() + playerBorderSpeed)); } //Top
-	if (getY() <= screenHeight)     { setPlayerPos(sf::Vector2<float>(getX(), getY() - playerBorderSpeed)); } //Bottom
+	if (getX() >= screenWidth)      { setPlayerPos(sf::Vector2<float>(getX() - playerBorderSpeed, getY())); } //Right
 }
 
 sf::FloatRect Player::getGlobalBounds() {
 	return mPlayer.getGlobalBounds();
+}
+
+bool Player::collisionWithEnemy(Enemy* enemy) {
+	if (getGlobalBounds().intersects(enemy->getGlobalBounds())) {
+		return true;
+	}
+	return false;
 }

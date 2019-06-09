@@ -3,7 +3,7 @@
 
 void Game::run() {
 	window.create(sf::VideoMode(screenWidth, screenHeight), "Indie Game Development");
-	window.setPosition({ window.getPosition().x, window.getPosition().y - 50 });
+	window.setPosition({ window.getPosition().x, window.getPosition().y - 40 });
 	window.setFramerateLimit(120);
 
 	machine.run(StateMachine::buildState<MainMenuState>(machine, window, true));

@@ -3,6 +3,9 @@
 
 const unsigned int screenWidth  = 1000;
 const unsigned int screenHeight = 900;
+const unsigned int groundHeight = 700;
+
+const int playerBorderSpeed = 30;
 
 /*--------------COLOR INFO-------------*/
 //www.rapidtables.com/web/color/RGB_Color.html
@@ -21,9 +24,12 @@ const unsigned int screenHeight = 900;
 //Navy		 = 0, 0, 128
 
 
+/*--------------DEFINITIONS------------*/
+
+
+
 /*--------------BUG FIXES--------------*/
-
-
-
+//Sound fixes
+//Add more sound effects/music
 
 #endif

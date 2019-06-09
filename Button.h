@@ -16,7 +16,7 @@ enum ButtonStates { BTN_IDLE = 0, BTN_HOVER, BTN_ACTIVE };
 class Button {
 	public:
 		//Necessary information for button creation
-		Button(float x, float y, float width, float height, unsigned int characterSize, std::string fontFile, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color textColor);
+		Button(float posX, float posY, float width, float height, unsigned int characterSize, std::string fontFile, std::string text, sf::Color idleColor, sf::Color hoverColor, sf::Color activeColor, sf::Color textColor);
 		~Button();
 
 		//Button functionalities
@@ -34,6 +34,9 @@ class Button {
 		sf::RectangleShape shape;
 		sf::Font buttonFont;
 		sf::Text text;
+
+		sf::Texture texture;
+		sf::Sprite image;
 
 		sf::Color idleColor, hoverColor, activeColor;
 };

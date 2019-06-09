@@ -35,6 +35,7 @@ class MainMenuState : public State {
 		Text* titleText;
 
 		//Booleans and Variables
+		std::string arialFont = "res/fonts/arial.ttf";
 
 		sf::Event sfEvent;
 
